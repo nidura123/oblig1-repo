@@ -1,4 +1,6 @@
+$(function () {
 
+});
 let biletter = [];
 function kjopBilett() {
     // Rydd opp i tidligere feilmeldinger før validering
@@ -9,8 +11,8 @@ function kjopBilett() {
     $("#epostFeil1").html("");
 
     let ut = "<table><tr>" +
-                    "<th>Film</th><th>Antall</th><th>Fornavn</th>" +
-                    "<th>Etternavn</th><th>Telefonnr</th><th>Epost</th></tr>";
+        "<th>Film</th><th>Antall</th><th>Fornavn</th>" +
+        "<th>Etternavn</th><th>Telefonnr</th><th>Epost</th></tr>";
     const bilett = {
         filmer : $("#film").val(),
         antall : $("#antallFilmer").val(),
@@ -37,8 +39,8 @@ function kjopBilett() {
         for (let liste of biletter) {
             ut+="<tr>";
             ut+="<td>" + liste.filmer + "</td><td>" + liste.antall + "</td><td>" + liste.fornavn
-            + "</td><td>" + liste.etternavn + "</td><td>" + liste.telefonnr
-            + "</td><td>" + liste.epost + "</td>";
+                + "</td><td>" + liste.etternavn + "</td><td>" + liste.telefonnr
+                + "</td><td>" + liste.epost + "</td>";
             ut+= "</tr>";
         }
         ut += "</table>"; // Husk å lukke tabellen

@@ -3,58 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="index.js"></script>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="index.js"></script>
 </head>
 <body>
-<h1>Bestilling av kinobiletter</h1>
-<table>
-    <tr>
-        <td><label for="film">Velg fim</label></td>
-        <td><select id="film" name="film">
-            <option value=" " disabled selected>Velg film her</option>
-            <option value="Hotel Transylvania">Hotel Transylvania</option>
-            <option value="Hotel Transylvania 2">Hotel Transylvania 2</option>
-            <option value="Game Night">Game Night</option>
-            <option value="Game Over">Game over!</option>
-            <option value="Grusomme Meg2">Grusomme meg 2</option>
-            <option value="Scary Movie">Scary Movie</option>
-            </select>
-        </td>
-    </tr>
-    <tr>
-        <td><br/><label for="antallFilmer">Antall</label></td>
-        <td><br/><input type="text" size="2" id="antallFilmer"/></td>
-        <td><br/><div id="antallFeil"></div></td>
-    </tr>
-    <tr>
-        <td><br/><label for="fornavn">Fornavn</label></td>
-        <td><br/><input type="text" id="fornavn"/></td>
-        <td><br/><div id="fornavnFeil"></div></td>
-    </tr>
-    <tr>
-        <td><label for="etternavn">Etternavn</label></td>
-        <td><input type="text" id="etternavn"/></td>
-        <td><div id="etternavnFeil"></div></td>
-    </tr>
-    <tr>
-        <td><label for="telefonnr">Telefonnr</label></td>
-        <td><input type="number" id="telefonnr"/></td>
-        <td><div id="telefonnrFeil1"1></div></td>
-        <td><div id="telefonnrFeil2"1></div></td>
-    </tr>
-    <tr>
-        <td><label for="epost">Epost</label></td>
-        <td><input type="email" id="epost" required/></td>
-        <td><div id="epostFeil1"></div></td>
-        <td><div id="epostFeil2"></div></td>
-    </tr>
-</table>
-<br/>
-<button onclick="kjopBilett()">Kjøp bilett</button>
-<br/>
-<h2>Alle biletter</h2>
-<span id="resultat"></span><br/>
-<button onclick="slettAlt()">Slett alle bilettene</button>
+    <div style="margin: 10px;">
+        <h1>Bestilling av kinobiletter</h1>
+        <br>
+        <table>
+            <tr>
+                <td><label for="film">Velg fim</label></td>
+                <td><select id="film" name="film">
+                    <option value=" " disabled selected>Velg film her</option>
+                    <option value="Hotel Transylvania">Hotel Transylvania</option>
+                    <option value="Hotel Transylvania 2">Hotel Transylvania 2</option>
+                    <option value="Game Night">Game Night</option>
+                    <option value="Game Over">Game over!</option>
+                    <option value="Grusomme Meg2">Grusomme meg 2</option>
+                    <option value="Scary Movie">Scary Movie</option>
+                </select>
+                </td>
+            </tr>
+            <tr>
+                <td><br/><label for="antallFilmer">Antall</label><br><br></td>
+                <td><br/><input type="text" size="2" id="antallFilmer"/><br><br></td>
+                <td><br/><div id="antallFeil"></div></td>
+            </tr>
+            <tr>
+                <td><br/><label for="fornavn">Fornavn</label><br><br></td>
+                <td><br/><input type="text" id="fornavn" style="margin: 5px;"/><br><br></td>
+                <td><br/><div id="fornavnFeil"></div></td>
+            </tr>
+            <tr>
+                <td><label for="etternavn">Etternavn</label><br><br></td>
+                <td><input type="text" id="etternavn" style="margin: 5px;"/><br><br></td>
+                <td><div id="etternavnFeil"></div></td>
+            </tr>
+            <tr>
+                <td><label for="telefonnr">Telefonnr</label><br><br></td>
+                <td><input type="number" id="telefonnr" style="margin: 5px;"/><br><br></td>
+            </tr>
+            <tr>
+                <td><label for="epost">Epost</label></td>
+                <td><input type="email" id="epost" required style="margin: 5px;"/></td>
+                <td><div id="epostFeil1"></div></td>
+                <td><div id="epostFeil2"></div></td>
+            </tr>
+        </table>
+        <br/>
+        <button onclick="kjopBilett()">Kjøp billett</button>
+        <br/>
+        <h2>Alle biletter</h2>
+        <span id="resultat"></span><br/>
+        <button onclick="slettAlt()">Slett alle billettene</button>
+    </div>
 </body>
 </html>
