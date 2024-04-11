@@ -4,7 +4,7 @@ $(function () {
 });
 
 function validerAntall(antall) {
-    const regex =/^[1.\-]$/;
+    const regex =/^[1-9.]{1,2}$/;
     const ok = regex.test(antall);
     if (!ok) {
         $('#feilAntall').html('Må skrive noe inn i antall');
@@ -43,7 +43,7 @@ function validerEtternavn(etternavn) {
 }
 
 function validerTelefonNr(telefonNr) {
-    const regex =/^[8.\-]$/;
+    const regex =/^[0-9.]{8}$/;
     const ok = regex.test(telefonNr);
     if (!ok) {
         $('#feilTelefonNr').html('Må skrive noe inn i telefonnr');
