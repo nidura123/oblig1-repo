@@ -1,9 +1,11 @@
 $(function () {
     hent();
+    hentFilm();
 });
 
 function kjopBillett() {
     const billett = {
+        film : $('#valgtFilm').val(),
         antall : $('#antallFilmer').val(),
         fornavn : $('#fornavn').val(),
         etternavn : $('#etternavn').val(),
@@ -13,6 +15,7 @@ function kjopBillett() {
     $.post("/lagre", billett, function () {
        hent();
     });
+    $('#valgtFilm').val('');
     $('#antallFilmer').val('');
     $('#fornavn').val('');
     $('#etternavn').val('');
@@ -26,6 +29,26 @@ function hent() {
     });
 }
 
+function hentFilm() {
+    $.get("/hentFilm",function (film) {
+        formaterFilm(film);
+    });
+}
+
+function formaterFilm(film) {
+    let ut = '<select id="valgtFilm">';
+    let forrigeFilm = '';
+    ut += '<option disabled selected>Velg Film</option>';
+    for (const f of film) {
+        if (f.film !== forrigeFilm) {
+            ut += '<option>' + f.film + '</option>';
+        }
+        forrigeFilm = f.film;
+    }
+    ut += '</select>';
+    $('#film').html(ut);
+}
+
 function formaterBillett(billett) {
     let ut = '';
     ut += '<table class="table table-striped"><tr>'+
@@ -33,7 +56,7 @@ function formaterBillett(billett) {
             '<th>Etternavn</th><th>Telefonnr</th><th>Epost</th>'+
             '</tr>';
     for (const b of billett) {
-        ut += '<tr><td>'+b.antall+'</td><td>'+b.fornavn+'</td>'+
+        ut += '<tr><td>'+b.film+'</td><td>'+b.antall+'</td><td>'+b.fornavn+'</td>'+
                 '<td>'+b.etternavn+'</td><td>'+b.telefonNr+'</td>'+
                 '<td>'+b.epost+'</td></tr>';
     }

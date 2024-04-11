@@ -2,18 +2,28 @@ package com.example.oblig1js;
 
 public class Billett {
 
+    private String film;
     private String antall;
     private String fornavn;
     private String etternavn;
     private String telefonNr;
     private String epost;
 
-    public Billett(String antall, String fornavn, String etternavn, String telefonNr, String epost) {
+    public Billett( String valgtFilm, String antall, String fornavn, String etternavn, String telefonNr, String epost) {
+        this.film = valgtFilm;
         this.antall = antall;
         this.fornavn = fornavn;
         this.etternavn = etternavn;
         this.telefonNr = telefonNr;
         this.epost = epost;
+    }
+
+    public String getFilm() {
+        return film;
+    }
+
+    public void setFilm(String film) {
+        this.film = film;
     }
 
     public String getAntall() {
