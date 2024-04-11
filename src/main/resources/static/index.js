@@ -3,6 +3,83 @@ $(function () {
     hentFilm();
 });
 
+function validerAntall(antall) {
+    const regex =/^[1.\-]$/;
+    const ok = regex.test(antall);
+    if (!ok) {
+        $('#feilAntall').html('Må skrive noe inn i antall');
+        return false;
+    }
+    else {
+        $('#feilAntall').html('');
+        return true;
+    }
+}
+
+function validerNavn(navn) {
+    const regex =/^[a-zA-ZæøåÆØÅ.\-]{1,20}$/;
+    const ok = regex.test(navn);
+    if (!ok) {
+        $('#feilNavn').html('Må skrive noe inn i fornavnet');
+        return false;
+    }
+    else {
+        $('#feilNavn').html('');
+        return true;
+    }
+}
+
+function validerEtternavn(etternavn) {
+    const regex =/^[a-zA-ZæøåÆØÅ.\-]{1,20}$/;
+    const ok = regex.test(etternavn);
+    if (!ok) {
+        $('#feilEtternavn').html('Må skrive noe inn i etternavn');
+        return false;
+    }
+    else {
+        $('#feilEtternavn').html('');
+        return true;
+    }
+}
+
+function validerTelefonNr(telefonNr) {
+    const regex =/^[8.\-]$/;
+    const ok = regex.test(telefonNr);
+    if (!ok) {
+        $('#feilTelefonNr').html('Må skrive noe inn i telefonnr');
+        return false;
+    }
+    else {
+        $('#feilTelefonNr').html('');
+        return true;
+    }
+}
+
+function validerEpost(epost) {
+    const regex =/^[a-zA-ZæøåÆØA0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,20}$/;
+    const ok = regex.test(epost);
+    if (!ok) {
+        $('#feilEpost').html('Må skrive noe inn i epost');
+        return false;
+    }
+    else {
+        $('#feilEpost').html('');
+        return true;
+    }
+}
+
+
+function validerOgLagreBillett() {
+    const antallOk = validerAntall($('#antallFilmer').val());
+    const navnOk = validerNavn($('#fornavn').val());
+    const etternavnOk = validerEtternavn($('#etternavn').val());
+    const telefonNrOk = validerTelefonNr($('#telefonnr').val());
+    const epostOk = validerEpost($('#epost').val());
+    if (antallOk && navnOk && etternavnOk && telefonNrOk && epostOk) {
+        kjopBillett();
+    }
+}
+
 function kjopBillett() {
     const billett = {
         film : $('#valgtFilm').val(),
@@ -38,7 +115,7 @@ function hentFilm() {
 function formaterFilm(film) {
     let ut = '<select id="valgtFilm">';
     let forrigeFilm = '';
-    ut += '<option disabled selected>Velg Film</option>';
+    ut += '<option disabled selected>Velg film her</option>';
     for (const f of film) {
         if (f.film !== forrigeFilm) {
             ut += '<option>' + f.film + '</option>';

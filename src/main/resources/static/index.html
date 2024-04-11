@@ -18,33 +18,34 @@
                 <td><div id="film" class="dropdown"></div></td>
             </tr>
             <tr>
-                <td><br/><label for="antallFilmer">Antall</label><br><br></td>
-                <td><br/><input type="text" size="2" id="antallFilmer"/><br><br></td>
-                <td><br/><div id="antallFeil"></div></td>
+                <td><br><label for="antallFilmer">Antall</label><br><br></td>
+                <td><br><input type="text" size="2" id="antallFilmer" onchange="validerNavn(this.value)"/><br><br></td>
+                <td><span id="feilAntall" style="color:red;"></span></td>
             </tr>
             <tr>
-                <td><br/><label for="fornavn">Fornavn</label><br><br></td>
-                <td><br/><input type="text" id="fornavn" style="margin: 5px;"/><br><br></td>
-                <td><br/><div id="fornavnFeil"></div></td>
+                <td><br><label for="fornavn">Fornavn</label><br><br></td>
+                <td><br><input type="text" id="fornavn" style="margin: 5px;" onchange="validerNavn(this.value)"/><br><br></td>
+                <td><span id="feilNavn" style="color:red;"></span></td>
             </tr>
             <tr>
                 <td><label for="etternavn">Etternavn</label><br><br></td>
-                <td><input type="text" id="etternavn" style="margin: 5px;"/><br><br></td>
-                <td><div id="etternavnFeil"></div></td>
+                <td><input type="text" id="etternavn" style="margin: 5px;" onchange="validerNavn(this.value)"/><br><br></td>
+                <td><span id="feilEtternavn" style="color:red;"></span></td>
             </tr>
             <tr>
                 <td><label for="telefonnr">Telefonnr</label><br><br></td>
-                <td><input type="text" id="telefonnr" style="margin: 5px;"/><br><br></td>
+                <td><input type="text" id="telefonnr" style="margin: 5px;" onchange="validerNavn(this.value)"/><br><br></td>
+                <td><span id="feilTelefonNr" style="color:red;"></span></td>
+
             </tr>
             <tr>
                 <td><label for="epost">Epost</label></td>
-                <td><input type="email" id="epost" required style="margin: 5px;"/></td>
-                <td><div id="epostFeil1"></div></td>
-                <td><div id="epostFeil2"></div></td>
+                <td><input type="email" id="epost" required style="margin: 5px;" onchange="validerNavn(this.value)"/></td>
+                <td><span id="feilEpost" style="color:red;"></span></td>
             </tr>
         </table>
         <br/>
-        <button onclick="kjopBillett()">Kjøp billett</button>
+        <button onclick="validerOgLagreBillett()">Kjøp billett</button>
         <br/>
         <h2>Alle biletter</h2>
         <div id="resultat" class="table-responsive" style="width: 700px;"></div>
