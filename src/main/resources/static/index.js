@@ -16,15 +16,15 @@ function validerAntall(antall) {
     }
 }
 
-function validerNavn(navn) {
+function validerNavn(fornavn) {
     const regex =/^[a-zA-ZæøåÆØÅ.\-]{1,20}$/;
-    const ok = regex.test(navn);
+    const ok = regex.test(fornavn);
     if (!ok) {
-        $('#feilNavn').html('Må skrive noe inn i fornavnet');
+        $('#feilFornavn').html('Må skrive noe inn i fornavnet');
         return false;
     }
     else {
-        $('#feilNavn').html('');
+        $('#feilFornavn').html('');
         return true;
     }
 }
@@ -71,11 +71,11 @@ function validerEpost(epost) {
 
 function validerOgLagreBillett() {
     const antallOk = validerAntall($('#antallFilmer').val());
-    const navnOk = validerNavn($('#fornavn').val());
+    const fornavnOk = validerNavn($('#fornavn').val());
     const etternavnOk = validerEtternavn($('#etternavn').val());
     const telefonNrOk = validerTelefonNr($('#telefonnr').val());
     const epostOk = validerEpost($('#epost').val());
-    if (antallOk && navnOk && etternavnOk && telefonNrOk && epostOk) {
+    if (antallOk && fornavnOk && etternavnOk && telefonNrOk && epostOk) {
         kjopBillett();
     }
 }
@@ -101,7 +101,7 @@ function kjopBillett() {
 }
 
 function hent() {
-    $.get("/hent",function (billett) {
+    $.get("/hentBillett",function (billett) {
         formaterBillett(billett);
     });
 }
