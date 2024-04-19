@@ -1,0 +1,45 @@
+.container {
+    margin-left: 0;
+}
+h1{
+    margin-bottom: 30px;
+}
+#film {
+    margin-left: 10px;
+    display: inline-block
+}
+#antallFilmer {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 26px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+#fornavn {
+    display: inline-block;
+    margin-left: 10px;
+    width: 200px;
+    margin-bottom: 5px;
+}
+#etternavn {
+    display: inline-block;
+    margin-left: 1px;
+    width: 200px;
+    margin-bottom: 5px;
+}
+#telefonNr {
+    display: inline-block;
+    margin-left: 4px;
+    width: 200px;
+    margin-bottom: 5px;
+}
+#epost {
+    display: inline-block;
+    margin-left: 28px;
+    width: 200px;
+    margin-bottom: 5px;
+}
+span {
+    color:red;
+    display: inline-block;
+}

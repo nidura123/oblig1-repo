@@ -5,49 +5,44 @@
     <title>Kinobilletter</title>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="index.js"></script>
 </head>
 <body>
-<div class="container" style="margin-left: 0;">
-    <h1 style="margin-bottom: 30px;">Bestilling av kinobiletter</h1>
+<div class="container">
+    <h1>Bestilling av kinobiletter</h1>
     <div class="row">
         <div class="col-md-5">
             <form class="form">
                 <div class="form-group">
                     <label for="film">Velg fim</label>
-                    <div id="film" class="dropdown" style="margin-left: 10px; display: inline-block;"></div>
+                    <div id="film" class="dropdown"></div>
                 </div>
                 <div class="form-group">
                     <label for="antallFilmer">Antall</label>
-                    <input type="text" id="antallFilmer" size="2" onchange="validerAntall(this.value)"
-                           style="border: 1px solid #ccc; border-radius: 4px; margin-left: 26px;
-                           margin-bottom: 5px; text-align: center;" />
-                    <span id="feilAntall" style="color:red; display: inline-block;"></span>
+                    <input type="text" id="antallFilmer" size="2" onchange="validerAntall(this.value)"/>
+                    <span id="feilAntall"></span>
                 </div>
                 <div class="form-group">
                     <label for="fornavn">Fornavn</label>
-                    <input type="text" id="fornavn" onchange="validerFornavn(this.value)" class="form-control"
-                           style="display: inline-block; margin-left: 10px; width: 200px; margin-bottom: 5px;"/>
-                    <span id="feilFornavn" style="color:red; display: inline-block;"></span>
+                    <input type="text" id="fornavn" onchange="validerFornavn(this.value)" class="form-control"/>
+                    <span id="feilFornavn"></span>
                 </div>
                 <div class="form-group">
                     <label for="etternavn">Etternavn</label>
-                    <input type="text" id="etternavn" onchange="validerEtternavn(this.value)" class="form-control"
-                           style="display: inline-block; margin-left: 1px; width: 200px; margin-bottom: 5px;"/>
-                    <span id="feilEtternavn" style="color:red; display: inline-block;"></span>
+                    <input type="text" id="etternavn" onchange="validerEtternavn(this.value)" class="form-control"/>
+                    <span id="feilEtternavn"></span>
                 </div>
                 <div class="form-group">
                     <label for="telefonNr">Telefonnr</label>
-                    <input type="text" id="telefonNr" onchange="validerTelefonNr(this.value)" class="form-control"
-                           style="display: inline-block; margin-left: 4px; width: 200px; margin-bottom: 5px;"/>
-                    <span id="feilTelefonNr" style="color:red; display: inline-block;"></span>
+                    <input type="text" id="telefonNr" onchange="validerTelefonNr(this.value)" class="form-control"/>
+                    <span id="feilTelefonNr"></span>
                 </div>
                 <div class="form-group">
                     <label for="epost">Epost</label>
-                    <input type="email" id="epost" required onchange="validerEpost(this.value)" class="form-control"
-                           style="display: inline-block; margin-left: 28px; width: 200px; margin-bottom: 5px;"/>
-                    <span id="feilEpost" style="color:red; display: inline-block;"></span>
+                    <input type="email" id="epost" onchange="validerEpost(this.value)" class="form-control"/>
+                    <span id="feilEpost"></span>
                 </div>
             </form>
         </div>
