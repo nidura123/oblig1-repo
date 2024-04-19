@@ -16,7 +16,7 @@ function validerAntall(antall) {
     }
 }
 
-function validerNavn(fornavn) {
+function validerFornavn(fornavn) {
     const regex =/^[a-zA-ZæøåÆØÅ.\-]{1,20}$/;
     const ok = regex.test(fornavn);
     if (!ok) {
@@ -71,9 +71,9 @@ function validerEpost(epost) {
 
 function validerOgLagreBillett() {
     const antallOk = validerAntall($('#antallFilmer').val());
-    const fornavnOk = validerNavn($('#fornavn').val());
+    const fornavnOk = validerFornavn($('#fornavn').val());
     const etternavnOk = validerEtternavn($('#etternavn').val());
-    const telefonNrOk = validerTelefonNr($('#telefonnr').val());
+    const telefonNrOk = validerTelefonNr($('#telefonNr').val());
     const epostOk = validerEpost($('#epost').val());
     if (antallOk && fornavnOk && etternavnOk && telefonNrOk && epostOk) {
         kjopBillett();
@@ -86,7 +86,7 @@ function kjopBillett() {
         antall : $('#antallFilmer').val(),
         fornavn : $('#fornavn').val(),
         etternavn : $('#etternavn').val(),
-        telefonNr : $('#telefonnr').val(),
+        telefonNr : $('#telefonNr').val(),
         epost : $('#epost').val()
     }
     $.post("/lagre", billett, function () {
@@ -96,7 +96,7 @@ function kjopBillett() {
     $('#antallFilmer').val('');
     $('#fornavn').val('');
     $('#etternavn').val('');
-    $('#telefonnr').val('');
+    $('#telefonNr').val('');
     $('#epost').val('');
 }
 

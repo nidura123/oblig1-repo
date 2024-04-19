@@ -23,7 +23,7 @@ public class BillettRepository {
     public List<Billett> hentBillett() {
         String sql = "SELECT F.film, B.antall, B.fornavn, B.etternavn, B.telefonNr," +
                 " B.epost FROM Billett AS B, Film AS F WHERE B.film = F.film " +
-                "ORDER BY LOWER(B.etternavn) ASC";
+                "ORDER BY LOWER(B.etternavn)";
         List<Billett> alleBilletter = db.query(sql, new BeanPropertyRowMapper(Billett.class));
         return  alleBilletter;
     }

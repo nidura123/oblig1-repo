@@ -2,53 +2,62 @@
 <html lang="no">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Test</title>
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="index.js"></script>
 </head>
 <body>
-    <div style="margin: 10px;">
-        <h1>Bestilling av kinobiletter</h1>
-        <br>
-        <table>
-            <tr>
-                <td><label for="film">Velg fim</label></td>
-                <td><div id="film" class="dropdown"></div></td>
-            </tr>
-            <tr>
-                <td><br><label for="antallFilmer">Antall</label><br><br></td>
-                <td><br><input type="text" size="2" id="antallFilmer" onchange="validerNavn(this.value)"/><br><br></td>
-                <td><span id="feilAntall" style="color:red;"></span></td>
-            </tr>
-            <tr>
-                <td><br><label for="fornavn">Fornavn</label><br><br></td>
-                <td><br><input type="text" id="fornavn" style="margin: 5px;" onchange="validerNavn(this.value)"/><br><br></td>
-                <td><span id="feilFornavn" style="color:red;"></span></td>            </tr>
-            <tr>
-                <td><label for="etternavn">Etternavn</label><br><br></td>
-                <td><input type="text" id="etternavn" style="margin: 5px;" onchange="validerNavn(this.value)"/><br><br></td>
-                <td><span id="feilEtternavn" style="color:red;"></span></td>
-            </tr>
-            <tr>
-                <td><label for="telefonnr">Telefonnr</label><br><br></td>
-                <td><input type="text" id="telefonnr" style="margin: 5px;" onchange="validerNavn(this.value)"/><br><br></td>
-                <td><span id="feilTelefonNr" style="color:red;"></span></td>
-
-            </tr>
-            <tr>
-                <td><label for="epost">Epost</label></td>
-                <td><input type="email" id="epost" required style="margin: 5px;" onchange="validerNavn(this.value)"/></td>
-                <td><span id="feilEpost" style="color:red;"></span></td>
-            </tr>
-        </table>
-        <br/>
-        <button onclick="validerOgLagreBillett()">Kjøp billett</button>
-        <br/>
-        <h2>Alle biletter</h2>
-        <div id="resultat" class="table-responsive" style="width: 700px;"></div>
-        <button onclick="slettAlt()" style="">Slett alle billettene</button>
+<div class="container" style="margin-left: 0;">
+    <h1 style="margin-bottom: 30px;">Bestilling av kinobiletter</h1>
+    <div class="row">
+        <div class="col-md-5">
+            <form class="form">
+                <div class="form-group">
+                    <label for="film">Velg fim</label>
+                    <div id="film" class="dropdown" style="margin-left: 10px; display: inline-block;"></div>
+                </div>
+                <div class="form-group">
+                    <label for="antallFilmer">Antall</label>
+                    <input type="text" id="antallFilmer" size="2" onchange="validerAntall(this.value)"
+                           style="border: 1px solid #ccc; border-radius: 4px; margin-left: 26px;
+                           margin-bottom: 5px; text-align: center;" />
+                    <span id="feilAntall" style="color:red; display: inline-block;"></span>
+                </div>
+                <div class="form-group">
+                    <label for="fornavn">Fornavn</label>
+                    <input type="text" id="fornavn" onchange="validerFornavn(this.value)" class="form-control"
+                           style="display: inline-block; margin-left: 10px; width: 200px; margin-bottom: 5px;"/>
+                    <span id="feilFornavn" style="color:red; display: inline-block;"></span>
+                </div>
+                <div class="form-group">
+                    <label for="etternavn">Etternavn</label>
+                    <input type="text" id="etternavn" onchange="validerEtternavn(this.value)" class="form-control"
+                           style="display: inline-block; margin-left: 1px; width: 200px; margin-bottom: 5px;"/>
+                    <span id="feilEtternavn" style="color:red; display: inline-block;"></span>
+                </div>
+                <div class="form-group">
+                    <label for="telefonNr">Telefonnr</label>
+                    <input type="text" id="telefonNr" onchange="validerTelefonNr(this.value)" class="form-control"
+                           style="display: inline-block; margin-left: 4px; width: 200px; margin-bottom: 5px;"/>
+                    <span id="feilTelefonNr" style="color:red; display: inline-block;"></span>
+                </div>
+                <div class="form-group">
+                    <label for="epost">Epost</label>
+                    <input type="email" id="epost" required onchange="validerEpost(this.value)" class="form-control"
+                           style="display: inline-block; margin-left: 28px; width: 200px; margin-bottom: 5px;"/>
+                    <span id="feilEpost" style="color:red; display: inline-block;"></span>
+                </div>
+            </form>
+        </div>
     </div>
+    <br/>
+    <button onclick="validerOgLagreBillett()" class="btn btn-primary">Kjøp billett</button>
+    <br/>
+    <h2>Alle biletter</h2>
+    <div id="resultat" class="table-responsive" style="width: 700px;"></div>
+    <button onclick="slettAlt()" class="btn btn-danger">Slett alle billettene</button>
+</div>
 </body>
 </html>
